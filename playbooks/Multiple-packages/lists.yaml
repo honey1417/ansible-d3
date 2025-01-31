@@ -6,3 +6,5 @@
   - name: Install multiple packages
     yum:
      name: ['git','httpd','tree','unzip']
+
+
