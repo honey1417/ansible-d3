@@ -1,0 +1,22 @@
+---
+- hosts: 34.30.66.110
+  become: yes #root permission
+  tasks:
+  - name: Install apache2 webserver
+    apt: #module
+      name: apache2
+      state: present
+      update_cache: true
+
+  - name: start the apache2 service
+    service: 
+      name: apache2
+      state: started
+      enabled: yes  #service should start on boot
+
+  - name: Copy the HTML file
+    copy: 
+      src: index.html
+      dest: /var/www/html/index.html
+      owner: www-data
+      mode: 0644

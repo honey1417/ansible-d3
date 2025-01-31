@@ -1,0 +1,22 @@
+---
+- hosts: 34.67.150.177
+  become: yes #root permission
+  vars:
+    courseName: DevOps program
+    batchNumber: 3
+  tasks:
+  - name: Install httpd webserver
+    yum: #module
+      name: httpd
+      state: present
+
+  - name: start the service
+    service: 
+      name: httpd
+      state: started
+      enabled: true  #service should start on boot
+
+  - name: Copy the HTML file
+    template: 
+      src: index.html
+      dest: /var/www/html/index.html

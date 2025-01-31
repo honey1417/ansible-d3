@@ -1,0 +1,15 @@
+---
+#1.yaml #name of the playbook
+- name: <name of the play>
+  hosts: <on which hosts this playbook should execute>
+  become: yes or no <a root user>
+  tasks: 
+  - name: <name of the task>
+    <module-name>:
+     <module-parameters-1>: <value-1>
+
+- name: <name of the play>
+---
+
+#ansible -i inv -b -m modulename all
+ ansible-playbook -i inv 1.yaml

@@ -1,0 +1,6 @@
+---
+#1.yaml
+- hosts: all
+  tasks:
+  - name: Ping Servers
+    ping:

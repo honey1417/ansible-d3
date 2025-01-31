@@ -1,0 +1,8 @@
+---
+#using lists (preferred)
+- hosts: 34.67.150.177
+  become: yes
+  tasks:
+  - name: Install multiple packages
+    yum:
+     name: ['git','httpd','tree','unzip']
